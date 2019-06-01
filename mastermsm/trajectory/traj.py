@@ -82,7 +82,7 @@ class TimeSeries(object):
         else:
             # An MD trajectory is provided
             self.file_name = traj
-            mdt = _load_mdtraj(top=top, traj=traj)
+            mdt = md.load(traj, top=top)
             self.mdt = mdt
             self.dt = self.mdt.timestep
 
